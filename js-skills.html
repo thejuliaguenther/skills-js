@@ -319,7 +319,7 @@
 <p>End of Skills Assessment. Read on for advanced problems. :)</p>
 
 
-<!-- 
+
 <h2>Advanced!</h2>
 <p>
   Hey, we know you're smart and becoming a Javascript ninja. So we've given you these
@@ -343,13 +343,18 @@
     What's your favorite food?
     <input type="text" name="favorite-food" required
            id="favorite-food-input">
-    <input type="submit" value="I'm Very Agreeable">
+    <input type="submit" value="I'm Very Agreeable" id="submit-button">
   </form>
   <div id="agreeable-text"></div>
 </fieldset>
 
 <script>
-  // put your code here
+  function showAgreement(e){
+    var food = $('#favorite-food-input').val();
+    $('#agreeable-text').append('I like '+food+' too!');
+    e.preventDefault();
+  }
+    $('#submit-button').on('click',showAgreement);
 </script>
 
 <div class="hint">
@@ -411,7 +416,7 @@
   <input type="button" id="play-guessing-game-2" value="Play!">
   <form action="do-not-go-here" id="guessing-game-2-form">
     <input id="number-guessed" name="number-guessed" type="number" placeholder="Guess" disabled>
-    <!-- hey! go read MDN about the "number" input type. Cool, huh? -->
+    <!-- hey! go read MDN about the "number" input type. Cool, huh?
     <input type="submit" id="try-this-number" value="Guess" disabled>
     <div id="number-guessing-msg"></div>
   </form>
